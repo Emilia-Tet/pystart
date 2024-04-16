@@ -1,0 +1,55 @@
+from random import choice
+
+ 
+
+wybor_uzytkownika = input("Wybierz: p (papier), n (nozyczki) lub k (kamien): ")
+
+sedno_gry = ["papier", "nozyczki", "kamien"]
+
+losowy_wybor = choice(sedno_gry)
+
+# print(losowy_wybor)
+
+ 
+
+remis = {"papier" : "p", "nozyczki" : "n","kamien" : "k"}
+
+wygrana_komputera = {"papier" : "k","nozyczki": "p","kamien" :"n"}
+
+ 
+
+wynik = 'Gratulacje, wygrywasz!'
+
+if remis[losowy_wybor] == wybor_uzytkownika:
+
+    wynik = 'Wynik to remis.'
+
+elif wygrana_komputera[losowy_wybor] == wybor_uzytkownika:
+
+    wynik = 'Wygral komputer. Sprobuj jeszcze raz!'
+
+ 
+
+ 
+
+print(f"Komputer wybral: {losowy_wybor.title()}! {wynik}")
+
+ 
+
+ 
+
+from random import randint
+
+from math import sqrt, floor, ceil
+
+ 
+
+random_number = randint(1,100)
+
+ 
+
+print(f'''Your random number is {random_number}. It's square is {random_number**2}.
+
+      It's square root rounded down to the nearest whole number is {floor(sqrt(random_number))}.
+
+      It's square root rounded up is {ceil(sqrt(random_number))}.''')
