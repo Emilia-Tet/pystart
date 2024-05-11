@@ -1,0 +1,24 @@
+users_number1 = int(input("Podaj pierwszą liczbę: "))
+users_number2 = int(input("Podaj drugą liczbę: "))
+operation_choice = int(input(f"wybierz działanie. 1 = dodawanie, 2 = odejmowanie, 3 = mnożenie, 4 = dzielenie \n"))
+
+def main(num1, num2, choice) -> float:
+    match choice:
+        case 1:
+            print(f"wynik dodawania to: {num1 + num2}")
+        
+        case 2:
+            print(f"wynik odejmowania to: {num1 - num2}")
+        
+        case 3:
+            print(f"wynik mnożenia to: {num1 * num2}")
+        
+        case 4:
+            print(f"wynik dzielenia to: {num1 / num2}")
+        
+        case _:
+            print("Choose one of the available operations.")
+
+
+if __name__ == "__main__":
+    main(users_number1, users_number2, operation_choice)
