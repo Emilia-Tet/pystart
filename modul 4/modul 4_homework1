@@ -14,7 +14,10 @@ def main(num1, num2, choice) -> float:
             print(f"wynik mnożenia to: {num1 * num2}")
         
         case 4:
-            print(f"wynik dzielenia to: {num1 / num2}")
+            try:
+                print(f"wynik dzielenia to: {num1 / num2}")
+            except ZeroDivisionError:
+                print('We cannot divide by 0')
         
         case _:
             print("Choose one of the available operations.")
@@ -22,3 +25,4 @@ def main(num1, num2, choice) -> float:
 
 if __name__ == "__main__":
     main(users_number1, users_number2, operation_choice)
+
