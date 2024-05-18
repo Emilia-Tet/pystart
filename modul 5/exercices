@@ -1,0 +1,34 @@
+def word_counter(text: str) -> int:
+  return len(text.split())
+
+
+print(word_counter("Hello world"))
+
+
+def vowels_counter(text: str) -> int:
+  return sum(1 for char in text if char in "aeiou")
+
+
+print(vowels_counter("Hello world"))
+
+
+def vowels_counter2(text: str) -> int:
+  return len(str(char for char in text if char in "aeiou"))
+
+
+def vowels_counter3(text: str) -> int:
+  return len([char for char in text if char in "aeiou"])
+
+
+# Działa, ale jest mało wydajne, bo tworzy listę i przechowuje ją w pamięci
+# a potem iteruje po niej, zamiast na bieżąco zliczać samogłoski.
+
+# char for char in text if char in "aeiou" - to jest generator, który iteruje przez każdy znak w text i sprawdza, czy znak jest samogłoską (a, e, i, o, u).
+
+# 1. str(...) - ten fragment próbuje przekonwertować generator na string. Jednakże, bez #otoczenia generatora nawiasami, tak jak w list(...) czy tuple(...), 
+# Python interpretuje to #jako jeden argument dla funkcji str(). To nie działa zgodnie z zamierzeniami, ponieważ 
+#konwersja generatora do stringa bez iterowania przez niego powoduje, że Python zwraca
+# reprezentację generatora, coś w stylu "<generator object <genexpr> at 0x...>".
+# 2. len(...) - mierzy długość stringa, który jest reprezentacją generatora, a nie liczby # #elementów wygenerowanych przez generator.
+# 3. Ostatecznie, str(char for char in text if char in "aeiou") nie daje stringa z #samogłoskami,
+# a długość reprezentacji stringa generatora (np. "<generator object <genexpr> at #0x...>"), co nie ma żadnego sensu w kontekście zliczania samogłosek.
