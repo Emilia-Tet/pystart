@@ -1,0 +1,9 @@
+def remove_word(text, letter):
+  for word in text.split()):
+    if word.startswith(letter) or word.startswith(letter.upper()):
+      text.remove(word)
+  return " ".join(word for word in text)
+
+
+print(remove_word("Lubie bawić się latawcem i lalkami", "l"))
+print(remove_word("Kasia lubi konie i korale", "k"))
