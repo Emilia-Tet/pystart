@@ -1,0 +1,15 @@
+user_input1 = input("Podaj pierwsze słowo: ")
+user_input2 = input("Podaj drugie słowo: ")
+
+def common_chars(word1: str, word2: str) -> set:
+    ''' Returns a set of common characters for two strings.'''
+    return set(word1.lower())&set(word2.lower())
+
+def main():
+    result = [i for  i in common_chars(user_input1, user_input2)]
+    print(f"Wspólne litery podanych słów to: {", ".join(result)}")
+
+if __name__ == "__main__":
+    main()
+
+# replit: https://replit.com/@EmiTet/exercice-11-pystart
