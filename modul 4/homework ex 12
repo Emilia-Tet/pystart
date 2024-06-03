@@ -1,0 +1,14 @@
+print("Podaj listę słow oddzielonych przecinkami: ")
+input_str = input("").split(sep=",")
+
+print("\n".join(set(input_str)))
+
+#albo wersja Kacpra
+sentence = "ale, dzisiaj, pada, i , pada"
+words = set()
+
+for word in sentence.split(","):
+  words.add(word.strip())
+
+for word in words:
+  print(word)
