@@ -1,0 +1,11 @@
+print("Podaj dwa słowa, żeby sprawdzić, czy są anagramami. ")
+word1 = input("Podaj pierwsze słowo: ")
+word2 = input("Podaj drugie słowo: ")
+
+
+def anagram_check(word1: str, word2: str) -> bool:
+    if sorted(word1.lower()) == sorted(word2.lower()):
+        return True
+    return False
+
+print(f"Słowa {word1} i {word2} są anagramami: {anagram_check(word1, word2)}")
