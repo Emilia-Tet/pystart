@@ -9,3 +9,5 @@ def anagram_check(word1: str, word2: str) -> bool:
     return False
 
 print(f"Słowa {word1} i {word2} są anagramami: {anagram_check(word1, word2)}")
+
+# połączyć z API SJP
