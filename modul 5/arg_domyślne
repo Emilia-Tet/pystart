@@ -1,0 +1,25 @@
+def common_dividers(num1, num2, num3=1):
+    dividers = []
+    if num1>=num2:
+        for i in range(num3,num1+1):
+            if num1%i==0 and num2%i==0:
+                dividers.append(i)
+    else:
+        for i in range(num3,num2+1):
+            if num1%i==0 and num2%i==0:
+                dividers.append(i)
+    return dividers
+
+print(common_dividers(3, 15))
+
+
+
+
+def multiply(num1, num2 = 2):
+    return num1*num2
+
+print(multiply(3))
+
+print(multiply(3,8))
+
+print(multiply(5))
