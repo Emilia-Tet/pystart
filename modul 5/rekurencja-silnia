@@ -1,0 +1,25 @@
+def calculate_power(num):
+  if num == 0:
+    return 1
+  return num* calculate_power(num-1)
+
+# mój wcześniejszy błąd:
+
+# def calculate_power(num):
+#   if num == 0:
+#     return 1
+#   return calculate_power(num* (num-1))
+
+# Pierwsze wywołanie: calculate_power(3)
+
+# num jest 3, nie jest równe 0.
+# Wywołuje calculate_power(3 * 2), czyli calculate_power(6).
+# Drugie wywołanie: calculate_power(6)
+
+# num jest 6, nie jest równe 0.
+# Wywołuje calculate_power(6 * 5), czyli calculate_power(30).
+# Trzecie wywołanie: calculate_power(30)
+
+# num jest 30, nie jest równe 0.
+# Wywołuje calculate_power(30 * 29), czyli calculate_power(870).
+
