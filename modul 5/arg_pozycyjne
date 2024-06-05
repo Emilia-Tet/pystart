@@ -1,0 +1,12 @@
+def repeat_text(text, delimiter=",", repeat=1):
+  (list_text:=[]).append(text)
+  list_text = list_text*repeat
+  return delimiter.join(list_text)
+
+# da się prościej:
+
+def repeat_text(text, delimiter=",", repeat=1):
+    return delimiter.join([text] * repeat)
+
+# [text] * repeat tworzy listę zawierającą text powtórzony repeat razy.
+# delimiter.join(...) łączy elementy listy w jeden string, oddzielone delimiter.
