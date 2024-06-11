@@ -1,26 +1,15 @@
-users_number1 = int(input("Podaj pierwszą liczbę: "))
-users_number2 = int(input("Podaj drugą liczbę: "))
-operation_choice = int(input(f"wybierz działanie. 1 = dodawanie, 2 = odejmowanie, 3 = mnożenie, 4 = dzielenie \n"))
+def sum_lists(a: list, b: list) -> list:
+"""this function adds the elements of two lists with the same index.
+If one list is longer than the other, it adds 0 to these elements.
 
-def main(num1, num2, choice) -> float:
-match choice:
-case 1:
-print(f"wynik dodawania to: {num1 + num2}")
+Args:_description_
+a (list): first list of integers or floats
+b (list): second list of integers or floats
 
-case 2:
-print(f"wynik odejmowania to: {num1 - num2}")
-
-case 3:
-print(f"wynik mnożenia to: {num1 * num2}")
-
-case 4:
-try:
-print(f"wynik dzielenia to: {num1 / num2}")
-except ZeroDivisionError:
-print(''We cannot divide by 0'.')
-
-case _:
-print("Choose one of the available operations.")
-
-if __name__ == "__main__":
-main(users_number1, users_number2, operation_choice)
+Returns:
+list: list of summed elements with the same index
+"""
+max_len = max(len(a), len(b))
+a.extend([0] * (max_len - len(a)))
+b.extend([0] * (max_len - len(b)))
+return [sum(x) for x in list(zip(a,b))]
