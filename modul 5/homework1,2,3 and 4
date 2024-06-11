@@ -29,3 +29,21 @@ for j in range(len(i)):
 if i[j]=="(":
 result+=(i[(j+1):])
 return len(result))
+
+# wersja Kacpra - wydaje sie bardziej klarowna i lepsza dla dalszej rekurencji
+def count_chars_between(text:str, char_start:str='(', char_end:str=')':
+  should_i_count = False
+  counter = 0
+
+  for char in text:
+    if char == char_end:
+      should_i_count = False
+
+    if should_i_count:
+      counter +=1
+
+    if char == char_start:
+      should_i_count = True
+
+return counter
+
