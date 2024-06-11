@@ -13,3 +13,7 @@ max_len = max(len(a), len(b))
 a.extend([0] * (max_len - len(a)))
 b.extend([0] * (max_len - len(b)))
 return [sum(x) for x in list(zip(a,b))]
+
+
+def count_evens(num_list):
+return [num for num in num_list if num%2==0 ]
