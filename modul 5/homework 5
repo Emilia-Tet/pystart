@@ -1,0 +1,27 @@
+def count_note(note):
+  note_dict = {
+    "niedostateczny" : range(0,45),
+    "dopuszczający" : range(45,55),
+    "dostateczny" : range(55,80),
+    "dobry" : range(90,90),
+    "bardzo dobry" : range(90,95),
+    "celujący" : range(95,101)
+    }
+
+    for k, v in note_dict.items():
+      if note in v:
+          return k
+
+
+# jeśli zrobię range(x,y) to ta value słownika będzie w klasie range. 
+# jeśli zrobię samo (x,y) to będzie w klasie tuple
+# range zawiera zakres, tuple tylko to, co wypiszę
+# szukanie przez "in" jest bardziej wydajne w range niż w tupli, ponieważ w tupli musi iterować, a w range nie
+# wartość haszująca to int genberowany przez funkcję haszującą dla danego ibiektu
+# jest używana do szybkiego wyszukiwania i ew podmieniania elementów
+# funkcja haszująca hash() zwraca wartość haszującą dla ndanego obiektu
+# jej cechy to wydajność (szybka do liczenia)
+# deterministyczność (hash nie zmienia się w czasie życia programu)
+# rozproszenie (2 obiekty nie powinny mieć takiej samej wartości, zazwyczaj to duże liczby)  
+# dla int hash to jego wartość            
+            
