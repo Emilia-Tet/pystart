@@ -20,3 +20,12 @@ def count_evens(num_list):
 
 def filter_words(word_list):
     return [word for word in word_list if 4<len(word)<8]
+
+def count_chars(text):
+result=""
+strlist = mystr.split(")")
+for i in text:
+for j in range(len(i)):
+if i[j]=="(":
+result+=(i[(j+1):])
+return len(result))
