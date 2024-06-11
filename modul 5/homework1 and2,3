@@ -16,4 +16,7 @@ return [sum(x) for x in list(zip(a,b))]
 
 
 def count_evens(num_list):
-return [num for num in num_list if num%2==0 ]
+  return [num for num in num_list if num%2==0 ]
+
+def filter_words(word_list):
+    return [word for word in word_list if 4<len(word)<8]
