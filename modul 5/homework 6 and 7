@@ -1,0 +1,12 @@
+def segment_length(x: tuple, y: tuple) -> float:
+  if len(x) !=2 or len(y) != 2:
+    raise Exception("Both arguments should be a 2-elements tuple")
+  return ((x[1] - x[0])**2 + (y[1] - y[0])**2)**0.5
+
+# wersja Kacpra, bardziej jasna:
+def calculate_segment_length(start: tuple, end: tuple) -> float:
+    x1, y1 = start
+    y1, y2 = end
+    return sqrt((x2-x1)**2 + (y2-y1)**2)
+
+    
