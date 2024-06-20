@@ -1,0 +1,46 @@
+# 6.
+def segment_length(x: tuple, y: tuple) -> float:
+  if len(x) !=2 or len(y) != 2:
+    raise Exception("Both arguments should be a 2-elements tuple")
+  return ((x[1] - x[0])**2 + (y[1] - y[0])**2)**0.5
+
+# wersja Kacpra, bardziej jasna:
+def calculate_segment_length(start: tuple, end: tuple) -> float:
+    x1, y1 = start
+    y1, y2 = end
+    return sqrt((x2-x1)**2 + (y2-y1)**2)
+
+# 7.
+def miles_to_km(length: float) -> float:
+  return length/1.609344
+
+def km_to_miles(length: float) -> float:
+  return length*1.609344
+
+# 8.
+def stats(input_list) -> dict:
+  return {'total' : len(input_list),
+          'mean' : sum(input_list)/len(input_list),
+          'min' : min(input_list),
+          'max' : max(input_list),
+          'sum' : sum(input_list)}
+
+# 9. 
+def reverse_words(sentence: str) -> str:
+return " ".join([word.lower()[::1] for word in sentence.split()])
+
+# 10.
+def sort_numbers(num):
+  return("".join(sorted(str(num))))
+
+# 11.
+def convert_nums(num_list):
+  return[num*-1 for num i num_list]
+
+# albo
+num_list = [5, 8, 90, -54]
+converted_list = list(map(lambda num: num*-1, num_list))
+
+# 12. 
+test_list = [1, 6, "kot"]
+new_list = list(map(str, test_list))
