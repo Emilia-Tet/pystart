@@ -9,4 +9,11 @@ def calculate_segment_length(start: tuple, end: tuple) -> float:
     y1, y2 = end
     return sqrt((x2-x1)**2 + (y2-y1)**2)
 
+
+def miles_to_km(length: float) -> float:
+  return length/1.609344
+
+def km_to_miles(length: float) -> float:
+  return length*1.609344
+
     
