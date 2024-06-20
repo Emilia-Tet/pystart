@@ -1,0 +1,15 @@
+def calculate_addition(max_num) -> int:
+    if max_num == 1:
+        return 1
+    return calculate_addition(max_num-1)+max_num
+
+print(calculate_addition(4))
+
+
+def check_pin(pin: str) -> bool:
+    if len(pin) != 4:
+        return False
+    
+    if pin.isdigit():
+        return True
+    return False
