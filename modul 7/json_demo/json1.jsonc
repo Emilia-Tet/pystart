@@ -1,0 +1,31 @@
+// wykorzystywany w rest api
+// struktura podobna do list i słowników
+// klucze zawsze w cudzysłowie, nie apostrofy
+// są kolekcje, właściwości mają swoje wartości, w środku są obiekty
+// bazy danych pomagają jeśli json jest duży, bo trzeba go załadować w całości
+// są 4 funkcje. w ich nazwach, s oznacza strong a bez s oznacza plik.
+// load: json -> lista/słownik
+// loads: string json -> lista/słownik
+// dump: lista/słownk -> zapisuje plik.json
+// dumps: lista/słownk -> zapisuje string json
+
+// from json import load, loads, dump, dumps
+// modyfikujemy w całości, żeby uniknąć błędnego zapisu
+
+
+
+{
+    "id": 1,
+    "name": "Pystart",
+    "members" : [
+        {
+            "id": 1,
+            "first_name": "Jan",
+            "last_name": "Kowalski"
+        }, {
+            "id": 2,
+            "first_name": "John",
+            "last_name": "Smith"
+        }
+    ]
+}
