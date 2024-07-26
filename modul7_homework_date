@@ -1,0 +1,46 @@
+from datetime import date, datetime
+# kluczowe jest to, że nie mogę bezpośrednio porównywać datetime (str) z date
+# więc po sparsowaniu inputu od użytkownika musze użyć metody .date()
+
+# zadanie 1
+today = date.today()
+frt_today = today.strftime("%d.%m.%Y %H:%M:%S")
+print(f"Dzisiaj jest {frt_today}")
+
+today2 = datetime.now()
+frt_today2 = today.strftime("%d.%m.%Y %H:%M:$S")
+print(f"Dzisiaj jest {frt_today}")
+
+# zadanie 2 - ile dni do lata
+date_today = '24.07.2024'
+
+def summer_this_year(date_today: str) -> bool:
+    """If the given date is earlier than the first day of summer: returns True. 
+    Else: returns False.
+
+    Args:
+        date_today (str): Date for which you want to check the next start of summer.
+
+    Returns:
+        True if the summer will be the same year. False if the summer will be next year.
+    """    
+
+    parsed_today = datetime.strptime(date_today, '%d.%m.%Y')
+    summer_date = date(parsed_today.year, 6, 21)
+
+    if parsed_today.date() > summer_date:
+        return False
+    return True
+
+def main():
+    input_date = input(f'Żeby sprawdzić, ile czasu zostało do najbliższego początku lata, podaj datę w formacie: dd.mm.rrr: \n') 
+    parsed_input = datetime.strptime(input_date, '%d.%m.%Y')
+
+    if summer_this_year(input_date):
+        summer_date = date(parsed_input.year, 6, 21)
+    else:
+        summer_date = date(parsed_input.year+1, 6, 21)
+
+    return (summer_date-parsed_input.date()).days
+
+print(main())
