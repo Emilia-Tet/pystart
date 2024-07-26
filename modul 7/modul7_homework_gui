@@ -1,0 +1,56 @@
+import tkinter as tk
+from tkinter import messagebox
+import sqlite3
+
+
+def register_data():
+    with open('names.txt', encoding = 'utf-8') as file:
+
+        for line in file:
+            f_name, l_name = line.split()
+            print(f_name, l_name)
+
+            if first_name.get() == f_name and last_name.get() == l_name:
+                messagebox.showerror(title='Dane uzytkownika zajete', message='Juz jestes w bazie!')
+                first_name.delete(0, 'end')
+                last_name.delete(0, 'end')
+
+                return
+
+       
+    with open('names.txt', 'a', encoding='utf-8') as file:
+        file.write(f"{first_name.get()} {last_name.get()} \n")
+        messagebox.showinfo(title='Dane zarejestrowane', message='Milego dnia!')
+
+ 
+
+con = sqlite3.connect('test.db')
+con.execute('create table names (fname nvarchar, lname nvarchar)')
+con.commit()
+
+
+con.execute("insert into names values ('test', 'testowski')")
+con.commit()
+
+cursor = con.execute('select * from names')
+cursor.fetchall()
+
+window = tk.Tk()
+window.title("Fill in the form")
+
+label = tk.Label(window, text="Podaj imie:")
+label.pack()
+
+first_name = tk.Entry()
+first_name.pack()
+
+label = tk.Label(window, text="Podaj nazwisko:")
+label.pack()
+
+last_name = tk.Entry()
+last_name.pack()
+
+button = tk.Button(text="OK", command=register_data)
+button.pack()
+
+window.mainloop()
