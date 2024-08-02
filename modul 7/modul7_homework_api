@@ -1,0 +1,34 @@
+# imie-nazwisko-autora.json
+from requests import get
+from json import dump
+
+imie = 'Henryk'
+nazwisko = 'Sienkiewicz'
+
+url = 'https://wolnelektury.pl/api/authors/'
+response = get(url)
+data = response.json()
+
+def get_authors_slug(f_name, l_name):
+    for author in data:
+        # print(author)
+        if imie in author['name'] and nazwisko in author['name']:
+            print(author)
+            return author['slug']
+        
+
+authors_slug = get_authors_slug(imie, nazwisko)
+
+books_url = get(f'https://wolnelektury.pl/api/authors/{authors_slug}/books')
+
+titles = []
+for book in books_url.json():
+    print(book.get('title'))
+    titles.append(book.get('title'))
+
+
+with open(f'{authors_slug}.json', 'w', encoding='utf-8') as file:
+    dump(titles, file, indent=2)
+
+# ident jest ważny
+
