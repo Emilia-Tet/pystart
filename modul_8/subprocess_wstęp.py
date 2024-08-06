@@ -44,3 +44,8 @@ print(result.stdout.decode('utf8'))
 domain = input("Podaj adres do sprawdzenia: ")
 output = subprocess.run(['ping', '-n', '1', domain], shell=True, capture_output=True)
 print(output)
+
+if 'could not find' in output.stdout.decode('utf-8'):
+    print("Adres jest niedostęny")
+else:
+    print("Adres jest dostępny")
