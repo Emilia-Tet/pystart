@@ -1,0 +1,25 @@
+def count_bmi(height_m: float, weight_kg:float):
+    return weight_kg/(height_m**2)
+
+def describe_bmi(your_bmi: float):
+    if your_bmi< 16:
+        return "wyglodzenie"
+    elif 16 <= your_bmi <= 16.99:
+        return "wychudzenie"
+    elif 16 <= your_bmi <= 16.99:
+        return "wychudzenie"
+    elif 17 <= your_bmi <= 18.49:
+        return "niedowaga"
+    elif 18.5 <= your_bmi <= 24.99:
+        return "wartość prawidłowa"
+    elif 25 <= your_bmi <= 29.99:
+        return "nadwaga"
+    elif 30 <= your_bmi <= 34.99:
+        return "otyłość I stopnia"
+    elif 35 <= your_bmi <= 39.99:
+        return "otyłość I stopnia"
+    else:
+        return "otyłość I stopnia"
+    
+
+print(describe_bmi(count_bmi(1.67, 51)))
