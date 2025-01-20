@@ -1,6 +1,7 @@
 import sqlite3
 from random import choice, randint
 
+# create the sqlite table
 def create_table():
     with sqlite3.connect("basket.db") as conn:
         cursor = conn.cursor()
@@ -17,6 +18,7 @@ def create_table():
 
 create_table()
 
+# additional functions
 def get_next_order_number():
     with sqlite3.connect("basket.db") as conn:
         cursor = conn.cursor()
@@ -26,6 +28,7 @@ def get_next_order_number():
             return 1
         return result[0] + 1
 
+# main classes
 class Product:
     def __init__(self, name, price: float):
         if not isinstance(price, (int, float)) or price < 0:
@@ -89,7 +92,8 @@ class Basket:
         conn.commit()
         conn.close()
         print(f"Zamówienie nr {transaction_id} zapisano do bazy danych!")
-    
+
+# creating objects to buy    
 butter = Product('masło', 8)
 bread = Product('chleb', 5)
 ham = Product('szynka', 10)
@@ -109,6 +113,7 @@ products = [
     salad,
     onion]
 
+# testing the basket functionalities
 cart = Basket()
 cart.list_items()
 cart.calculate_total_cost()
@@ -132,12 +137,15 @@ cart.remove_item(ham, 1)
 cart.list_items()
 cart.calculate_total_cost()
 
+# testing actions that trigger an error
 # cart.remove_item(ham, 1)
 # cart.remove_item(bread, 7)objects
 # cart.remove_item(bread, 0)
 
 cart.save_basket_to_db()
 
+
+# creating 50 new orders to further db exercices
 for i in range(50):
     cart = Basket()
     for j in range(randint(1,5)):
