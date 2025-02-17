@@ -1,0 +1,37 @@
+class Employee():
+    def __init__(self, first_name, last_name, hourly_rate: float):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.hourly_rate = hourly_rate
+        self.time = 0
+
+    def add_time(self, time_in_h: float):
+        self.time += time_in_h
+
+    def get_salary(self) -> float:
+        salary = self.time * self.hourly_rate
+        self.time = 0
+        return salary
+
+
+class Manager(Employee):
+    def __init__(self, first_name, last_name, hourly_rate: float):
+        super().__init__(first_name, last_name, hourly_rate)
+        self.bonus = 0
+
+    def add_bonus(self, bonus: int):
+        self.bonus += bonus
+
+    def get_salary(self):
+        return 2* super().get_salary() + self.bonus
+    
+def test_employee():
+    employee = Employee('Jan', 'Kowalski', 30)
+    employee.add_time(100)
+    assert employee.get_salary() == 30 * 100
+
+def test_manager():
+    manager = Manager('Jan', 'Kowalski', 40)
+    manager.add_time(100)
+    manager.add_bonus(500)
+    assert manager.get_salary() == 40 * 100 * 2 + 500
