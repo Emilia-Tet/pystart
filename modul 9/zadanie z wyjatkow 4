@@ -1,0 +1,14 @@
+fruit = ['jabłko', 'banan', 'morela', 'kiwi', 'pomarańcza', 'melon', 'figa', 'czereśnia', 'wiśnia', 'gruszka']
+counter = 0
+
+try:
+    while True:
+        users_try = input('Podaj nazwę owoca: ')
+
+        if users_try in fruit:
+            raise ValueError('Owoc znajduje się na liście. Koniec zabawy.')
+        print('Tego owoca nie ma na liście!')
+        counter +=1
+        
+except ValueError as message:
+    print(message, f'Zgadłeś za {counter} razem.')
