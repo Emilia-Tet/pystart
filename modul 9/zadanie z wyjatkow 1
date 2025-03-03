@@ -1,0 +1,25 @@
+my_list = ['foka', 'mis', 'pies', 'ryba', 'wieloryb', 'zyrafa']
+
+users_choice = int(input('ktora wartosc chcesz zobaczyc? '))
+
+ 
+
+def choose_from_list(user_input, list_of_values):
+
+    try:
+
+        print(list_of_values[user_input-1])
+
+        return list_of_values[user_input-1]
+
+    except IndexError:
+
+        print('wybrales wartosc, ktorej nie ma na liscie')
+
+    finally:
+
+        print('Czy chcesz zobaczyc inna wartosc?')
+
+ 
+
+choose_from_list(users_choice, my_list)
