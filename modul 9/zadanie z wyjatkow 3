@@ -1,0 +1,10 @@
+users_choice = input('Podaj ciąg znaków, który chcesz otrzymać w lustrzanym odbiciu: ')
+
+try:
+    if users_choice == '':
+        raise ValueError('Ciąg znaków nie może być pusty.')
+
+    print(users_choice[::-1])
+
+except ValueError as message:
+    print(message)
