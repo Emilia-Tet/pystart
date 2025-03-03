@@ -1,0 +1,12 @@
+test_dict = {'a': 'python',
+             'b': 'knime',
+             'c': 'theobald'}
+
+users_choice = input('Wybierz, który punkt chcesz wyświetlić: ')
+
+try:
+    print(test_dict[users_choice])
+except KeyError:
+    print('Klucz, który wybrałeś, nie istnieje.')
+finally:
+    print('Czy chcesz zobaczyć jeszcze jakiś wynik?')
