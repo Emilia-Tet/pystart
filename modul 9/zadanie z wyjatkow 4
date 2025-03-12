@@ -1,3 +1,9 @@
+# wyjątki są dobre do obsługiwania bardziej złożonych funkcji (np funkcja wywołuje funkcję itd)
+# bo pozwala uniknac bardzo złożonych konstrukcji z ifami
+# stack = stos
+# możemy tworzyć właśne wyjątki za pomocą dziedziczenia
+
+
 fruit = ['jabłko', 'banan', 'morela', 'kiwi', 'pomarańcza', 'melon', 'figa', 'czereśnia', 'wiśnia', 'gruszka']
 counter = 0
 
@@ -12,3 +18,20 @@ try:
         
 except ValueError as message:
     print(message, f'Zgadłeś za {counter} razem.')
+
+
+#### wersja Kacpra
+fruits = []
+# for _ in range(10): -> tego nie chcemy, bo bedie licył też powtórzenia
+while len(fruits) < 10:
+    fruit = input('Podaj nazwę owoca: ')
+
+    try:
+
+        if fruit in fruits:
+            raise ValueError('Owoc już był wymieniony.')
+        
+        fruits.append(fruit)
+
+    except ValueError as error:
+        print(error)
