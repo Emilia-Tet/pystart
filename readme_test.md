@@ -12,3 +12,4 @@ cmd git commit -m "Tresc zmiany"
 cmd ``git log``, wychdzi sie ``q``
 cmd ``git pull ``
 cmd ``git push``
+git flow cheet sheet - podpowiedzi nazywania branchy itd
