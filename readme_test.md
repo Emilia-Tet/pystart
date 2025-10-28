@@ -12,4 +12,16 @@ cmd git commit -m "Tresc zmiany"
 cmd ``git log``, wychdzi sie ``q``
 cmd ``git pull ``
 cmd ``git push``
-git flow cheet sheet - podpowiedzi nazywania branchy itd
+git flow cheat sheet - podpowiedzi nazywania branchy itd
+
+branche:
+1. pull najnowszej wersji
+2. nazwanie brancha, np
+feature/...
+hotfix/...
+release/1.0.1
+release/1.0.2
+
+3. utworzenie brancha
+git checkout (przelacza miedzy branchami)
+git checkout -b feature/SYS-16.... (przelacza do nowo utworzonego brancha)
