@@ -30,3 +30,8 @@ Przed git push, git status
 "fatal: The current branch exercice/git has no upstream branch." -> jest branch lokalnie, ale nie zdalnie
 to tworzy i od razu pushuje. 
 potem moge sie przelaczac miedzy branchami przez git checkout. 
+
+Potem po stronie gita: compare and pull request. Mozna okreslic reviewra - zazwyczaj osoba, ktora wystawia taska. Assignee - to ja, odpowiedzialna za pull request. 
+
+plusem moge dodac komenatrze w kodzie. moge dac single comment albo start review. 
+potem moge wybrac, czy to komentarz czy request changes.
