@@ -25,3 +25,8 @@ release/1.0.2
 3. utworzenie brancha
 git checkout (przelacza miedzy branchami)
 git checkout -b feature/SYS-16.... (przelacza do nowo utworzonego brancha)
+git add, git commit (jesli duzy commit, to moge tez nie napisac -m, otworzy mi sie okno i tam moge wiecej napisac i wygodniej).
+Przed git push, git status
+"fatal: The current branch exercice/git has no upstream branch." -> jest branch lokalnie, ale nie zdalnie
+to tworzy i od razu pushuje. 
+potem moge sie przelaczac miedzy branchami przez git checkout. 
