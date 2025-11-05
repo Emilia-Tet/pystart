@@ -1,7 +1,5 @@
 # testowe zadanie na gita
 testlist = ['apple', 'lemon', 'mango']
-newlist = []
+newlist = [fruit[::-1] for fruit in testlist]
 
-for fruit in testlist:
-    newlist.append(fruit[::-1])
 print(newlist)
