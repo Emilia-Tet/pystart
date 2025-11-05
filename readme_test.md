@@ -35,3 +35,10 @@ Potem po stronie gita: compare and pull request. Mozna okreslic reviewra - zazwy
 
 plusem moge dodac komenatrze w kodzie. moge dac single comment albo start review. 
 potem moge wybrac, czy to komentarz czy request changes.
+
+git checkout (przelacza miedzy branchami)
+git checkout -b feature/SYS-16.... (przelacza do nowo utworzonego brancha)
+git stash -u:  takes your uncommitted changes (both staged and unstaged), saves them away for later use, and then reverts them from your working copy.
+
+4. merge
+5. delete branch
