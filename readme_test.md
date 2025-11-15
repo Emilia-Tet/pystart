@@ -42,3 +42,10 @@ git stash -u:  takes your uncommitted changes (both staged and unstaged), saves 
 
 4. merge
 5. delete branch
+
+6. konflikt
+najpierw trzeba pobrac aktualny main do brancha (git merge main). Wtedy pojawi sie info o konflikcie. Git -> resolve conflict.
+Bedzie do wyboru accept yours/accept theirs/merge.
+Jesli merge, to strzalkami lub recznie mozna dostosowac zmiany i Apply. 
+Git status -> pokaze you are still merging. 
+Git commit zeby zakomitowac zmiany. Potem mozna push i konflikt bedzie rozwiazany. 
