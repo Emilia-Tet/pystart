@@ -2,21 +2,18 @@
 # już nie "python .\main.py Hi Maciej", tylko "python .\main.py --greet Hi --name Maciej"
 
 import typer
+from cli.greeting import app as greeting
+from cli.gen import app as gen
+from cli.system import app as system
 
-def print_hi(
-        yell: bool = typer.Option(False, help="Krzyk", prompt="Krzyk?"),
-        greet: str =  typer.Option("Hi", help="Pozdrowienie", prompt="Pozdrowienie"),
-        name: str =  typer.Option("World", help="Imię do pozdrowienia", prompt="Imię")
-        ):
-    '''Program do pozdrawiania'''
-    if yell:
-        typer.echo(typer.style(
-            f'{greet}, {name} !!!',
-            fg=typer.colors.BRIGHT_WHITE,
-            bg=typer.colors.BRIGHT_RED
-            ))
-    else:
-        typer.echo(f'{greet}, {name}')
+app = typer.Typer()
+
+app.add_typer(greeting, name='greeting')
+app.add_typer(gen, name='gen', help='generator danych')
+app.add_typer(system, name='system', help='Polecenia systemowe')
+
+# if __name__ == '__main__':
+#     typer.run(greeting)
 
 if __name__ == '__main__':
-    typer.run(print_hi)
+    app()
