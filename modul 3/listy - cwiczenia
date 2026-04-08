@@ -1,0 +1,33 @@
+# cw 1
+zdanie = "Jade metrem do pracy."
+print(f"Ilosc slow w podanym zdaniu to:{len(zdanie.split())}, a ilosc znakow to {len(zdanie)}.")
+
+# cw 2
+lista_liczb = []
+for i in range(0,5): # lub range(5)
+    liczba = int(input(f"Podaj {i+1} liczbe: "))
+    lista_liczb.append(liczba)
+print(f"Najwieksza liczba z podanych to {max(lista_liczb)}, najmniejsza to {min(lista_liczb)}, a ich srednia to {sum(lista_liczb)/len(lista_liczb)}.")
+
+
+# cw 3
+imiona = "Adam Mickiewicz, Adam Asnyk, Zbigniew Nienacki"
+lista_nazwisk = imiona.split(",") # lub split(, )
+lista_imion = []
+for name in lista_nazwisk: 
+    split_name = name.split() # lub first_name, last_name = name.split()
+    if split_name[0] in lista_imion:
+        continue
+    else:
+        lista_imion.append(split_name[0])
+print(lista_imion)
+print(sorted(lista_imion, reverse=True))
+
+# to byla moja wersja, ale niepotrzebnie dluzsza
+posortowana_lista = sorted(lista_imion, reverse=True)
+print(posortowana_lista)
+
+# to jest wazne, ze metoda sort modyfikuje istniejaca liste i ZWRACA NONE
+lista_imion.sort(reverse=True)
+print(lista_imion)
+
