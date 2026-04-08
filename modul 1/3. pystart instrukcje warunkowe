@@ -1,0 +1,44 @@
+# :.2f nie zaokragla poprawnie, tylko ucina w wybranym miejscu cyfry
+
+# > wieksze
+# < mniejsze
+# >= wieksze lub rowne
+# <= mniejsze lub rowne
+# == rowne
+# != nierowne
+
+# if -- elif -- else
+# python dziala zachlannie, jesli wejdzie w pierszego elifa i bedzie ok, to reszty nie sprawdzi
+# jesli ma "and" i trafi na pierwszy falsz, to nie sprawdza dalej
+# jesli ma "or", i trafi na pierwsza prawde, to nie sprawdza dalej
+# dlatego warunki uklada sie od najprostszych do najtrudniejszych
+
+# odbierz liczbe i powiedz, czy jest parzysta
+# odbierz 2 wartosci, porownaj je i powiedz uzytkownikowi
+# zapytaj o temperature, -10 "zostan w domu", -10 do 20 "wez kurtke", wyzej "baw sie dobrze"
+
+temp = float(input("Jaka jest dzisiaj temperatura?"))
+
+if temp <= -10:
+    print("zostan w domu")
+elif -10< temp <= 20:
+    print("wez kurtke")
+else:
+    print("Baw sie dobrze")
+
+
+liczba = int(input("Podaj liczbe calkowita"))
+
+if liczba %2 ==0:
+    print("Liczba parzysta")
+else:
+    print("Liczba nieparzysta")
+
+liczba1 = int(input("Podaj pierwsza liczbe calkowita:"))
+liczba2 = int(input("Podaj druga liczbe calkowita:"))
+
+if liczba1>liczba2:
+    print(f"{liczba1} jest wieksze niz {liczba2}")
+elif liczba1==liczba2:
+    print("Te liczby sa identyczne")
+else: print(f"{liczba1} jest mniejsze niz {liczba2}")
