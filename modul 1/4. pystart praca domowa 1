@@ -1,0 +1,38 @@
+# praca domowa 1
+cels = float(input("Podaj temperature w stopniach Celsjusza:"))
+fahr = cels*9/5 +32
+print(f"Temperatura w Fahrenheitach wynosi: {fahr: .2f}")
+
+#do trojkata lacznie 6 pytan
+import math
+wierzcholek_Ax = int(input("Podaj wspolrzedna x wierzcholka A: "))
+wierzcholek_Bx = int(input("Podaj wspolrzedna x wierzcholka B: "))
+wierzcholek_Cx = int(input("Podaj wspolrzedna x wierzcholka C: "))
+
+wierzcholek_Ay = int(input("Podaj wspolrzedna y wierzcholka A: "))
+wierzcholek_By = int(input("Podaj wspolrzedna y wierzcholka B: "))
+wierzcholek_Cy = int(input("Podaj wspolrzedna y wierzcholka C: "))
+
+pole = abs((wierzcholek_Bx - wierzcholek_Ax)*(wierzcholek_Cy - wierzcholek_Ay)- (wierzcholek_By - wierzcholek_Ay)*(wierzcholek_Cx - wierzcholek_Ax))/2
+#albo:
+if pole <0:
+    pole *= -1
+
+
+print(f"Pole trojkata o podanych wspolrzednych wynosi {pole: .2f}.")
+
+# cw 3
+
+try:
+    liczba = int(input("Podaj liczbe calkowita:"))
+    if liczba%5 == 0 and liczba%11 ==0:
+        print(f"{liczba} jest podzielne przez 5 i przez 11.")
+    elif liczba%5==0 and liczba%11 !=0:
+        print(f"{liczba} jest podzielne przez 5 i nie jest podzielne przez 11.")
+    elif liczba%5!=0 and liczba%11 ==0:
+        print(f"{liczba} jest podzielne przez 11 i nie jest podzielne przez 5.")
+    else:
+        print(f"{liczba} nie jest podzielna ani przez 5, ani przez 11.")
+
+except ValueError:
+    print(f"To nie jest liczba calkowita.")
