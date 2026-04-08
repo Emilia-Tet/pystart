@@ -1,0 +1,75 @@
+# zmieniony string to juz calkiem nowy string
+
+name = "EmiEmi"
+name.replace('Emi', ' Tet')
+
+name2 = "Emilia"
+# i to jest ciekawe, ze tutaj w name nadal jest Emi, string jako taki  sie nie zmienil
+name.find('Em')
+name2.find('Em')
+name2.find('l')
+
+dir(str) #zwraca liste dostepnych metod do pracy ze stringiem
+dir(int)
+dir(list)
+
+# split dieli string na liste
+# join laczy
+
+person = ['Zofia', 'Nalkowska']
+" ".join(person)
+# jak sie da pusty string to laczy bezposrednio slowa, a jak spacje to rozdziela
+
+person2 = ['Jean', '-', 'Jacques', 'Rousseau']
+"".join(person2)
+" ".join(person2)
+"a".join(person2)
+
+#czyli jak jest wiecej slow, to zawartosc stringa wciska miedzy te slowa
+"yeah".join(person2)
+
+#count liczy ile razy dane wyrazenie wystapilo w stringu
+my_string = "Hejo Hejonadziejo"
+my_string.count('Hejo')
+
+#startswith wskazuje bool, czy dane wyrazenie rozpoczyna string. Analogicznie endswith lub in.
+my_string.startswith('Hejo')
+
+#isnumeric oraz isalpha - sprawdza czy zmienna jest liczbowa lub literowa
+# jest ich wiecej: isspace, islower...
+#to pomaga np rozroznic czy ktos wpisal w input cyfry czy litery
+my_string.isalpha()
+my_string.isnumeric()
+
+# isalpha odrzuca wszystkie dodatkowe znaki, nawet spacja sprawia, ze to juz nie jest alpha
+
+# 1. zadanie
+exceptions_m = 'Kuba', 'Barnaba', 'Bonawentura', 'Kosma', 'Dyzma', 'Jarema', 'Lasota'
+exceptions_f = 'Nel'
+name = input("Jak sie nazywasz?")
+if name.endswith('a') and name not in exceptions_m or name in exceptions_f:
+    print("Witam Pania")
+else:
+    print("Witam Pana")
+
+# 2. zadanie
+haslo = input("Podaj slowo, ktore program zmieni na bardzo silne haslo: ")
+haslo = haslo.replace('a', '@')
+haslo = haslo.replace('s', '$')
+print(f"Twoje haslo to: {haslo}")
+
+#3. zadanie
+zdanie = "Pies to najlepszy przyjaciel czlowieka, lecz nie kazdy pies o tym wie."
+zdanie = zdanie.lower()
+liczba_psow = zdanie.count("pies")
+print(f"W tym zdanie slowo pies pojawilo sie {liczba_psow} razy.")
+
+#4. zadanie
+waga = 0
+zakupy = "12 kilogramow jablek, 10 kilogramow gruszek, 20 kilogramow sliwek"
+zakupy = zakupy.split()
+for zakup in zakupy:
+    if zakup.isnumeric():
+        waga+=int(zakup)
+print(f"Twoje zakupy waza {waga} kg.")
+
