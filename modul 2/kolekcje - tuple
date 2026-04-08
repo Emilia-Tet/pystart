@@ -1,0 +1,65 @@
+# range(start, limit, step) step czyli co ile range ma przeskakiwac
+# kiedy wpisze tylko range(9), to zobacze niewiele:
+range(9)
+
+#ale juz jak zrobie z niego krotke, to bedzie lepiej:
+tuple(range(9))
+
+tuple(range(3, 9))
+
+tuple(range(1, 27, 3))
+
+# zadanie 1
+tuple(range(99,111))
+tuple(range(100,141, 2))
+tuple(range(100,142, 2))
+tuple(range(3,36, 3))
+
+# nawiasy nie sa konieczne, one sa raczej w terminalu ale niekoniecznie przy deklaracji
+#zeby tupla byla jednoelementowa, to musi byc przecinek:
+cities = ('Gdynia',)
+
+test1 = (1999)
+test2 = (1999,)
+print(test1, test2)
+
+# jak dobierac sie do czesci tupli? tak jak z lista, numer indeksu
+cities[0]
+# w razie za duzego indeksu, IndexError
+# tuple sa niemutowalne:
+# cities[0] = "Torun"
+#TypeError
+
+
+fruits = ('apple', 'orange', 'lemon', 'apricot', 'kiwi')
+type(fruits)
+# class tuple
+print(f"{fruits[0]}, {fruits[2]}, {fruits[4]}")
+
+# mnozenie tupli pomnaza jej zawartosc, bedzie dluzsza
+(1,2,3) * 3
+
+# tuple mozna dodawac do siebie, ale to nie jest modyfikacja a tylko utworzenie nowej
+a = (1,2,3)
+b = (4,5,6)
+a+=b
+print(a)
+
+# wypakowywanie
+poeta = ('Cyprian', 'Kamil', 'Norwid')
+imie, drugie_imie, nazwisko = poeta
+print(imie)
+
+# zmienna o nazwie _ jest umowna zmienna, ktorej nie bedziemy uzywac. Potrzebuje tej zmiennej tylko po to, zeby odpakowac pozostale informacje.
+# operator in pozwala sprawdzic, czy element znajduje sie w kolekcji:
+'apple' in fruits
+'pineapple' in fruits
+
+# zadanie 2
+imiona = ("Zosia", "Kasia", "Rozalia", "Felicja")
+imie = input("Podaj swoje imie: ")
+if imie in imiona:
+    print("Twoje imie jest w tupli.")
+else:
+    print("Nie ma cie w tupli.")
+
