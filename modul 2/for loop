@@ -1,0 +1,72 @@
+# po range mozna iterowac bez zamieniania go na tuple
+
+animals = 'cat', 'dog', 'butterfly', 'dragonfly'
+for indeks, element in enumerate(animals):
+    print(indeks+1, element)
+    type(indeks)
+
+#indeks jest intem
+    
+for i in reversed(animals):
+    print(i)
+
+for i in sorted(animals):
+    print(i)  
+
+for i in reversed(sorted(animals)):
+    print(i)
+
+for i in sorted(animals, reverse = True):
+    print(i)
+
+# zadanie 1
+moje_liczby = 1,4,5,6,7,8,9,33,76,478,3456567
+for l in moje_liczby:
+    if l%4 ==0 or l%5 ==0:
+        print(l)
+# zadanie 2
+imiona = "Asia", "Julia", "Blazej", "Emilia", "Ola", "Marcin"
+for imie in imiona:
+    if len(imie) >5:
+        print(imie)
+
+# zadanie 3 proby
+liczby = [1]
+for i in liczby:
+    print(liczby)
+    liczby.append(i+1)
+    if len(liczby) ==5:
+        break
+
+# zadanie 3 po mojemu
+def triangle(liczba):
+    for i in liczba:
+        print(liczba)
+        liczba = liczba[:-1]
+    
+# ulepszenie od chata gpt: liczba = ''.join(str(num) for num in range(0,5))
+
+# zadanie 3 poprawnie ;)
+for counter in reversed(range(1,5)):
+    for digit in range(1, counter+1):
+        print(digit, end='')
+    print()
+
+# mozna jeszcze podobno przez row i col, ale nie mam pewnosci
+for row in range(0,4):
+    for col in range(1,5-row):
+        print(col, end='')
+        print()
+
+# szukam sposobow na zrobienie stringu z rangea
+        
+def consec_number(end_digit: int):
+    moj_str = ''
+    lista = [i for i in range(1,end_digit+1)]
+    for i in lista:
+        moj_str+=str(i)
+    return moj_str
+
+consec_number(6)
+
+triangle(consec_number(6))
