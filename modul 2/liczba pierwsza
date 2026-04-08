@@ -1,0 +1,24 @@
+# zapytaj o liczbe i sprawdz, czy jest liczba pierwsza (dzielniki od 2 do tej liczby)
+from math import floor, sqrt
+test_liczba = 1
+lista_reszt = []
+for g in range(2, floor(sqrt(test_liczba))):
+    reszta = test_liczba%g
+    lista_reszt.append(reszta)
+    if reszta == 0:
+        print("Ta liczba nie jest pierwsza.")
+        break
+if 0 not in lista_reszt:
+    print("Ta liczba jest pierwsza.")
+
+# wersja Kacpra:
+number = 2
+is_prime = True
+for div in range(2,floor(sqrt(number))):
+    if number % div ==0:
+        is_prime = False
+        break
+if is_prime:
+    print('Liczba jest pierwsza.')
+else:
+    print('Liczba nie jest pierwsza.')
