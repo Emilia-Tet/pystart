@@ -1,0 +1,60 @@
+# dwukropek nie bez powodu kojarzy sie z rangem
+# nazwa[poczatek:koniec:krok]
+
+postaci = 'Yoda', 'Anakin', 'Obi-Wan', 'Leia', 'Imperator', 'klon'
+postaci[0]
+
+postaci[0:3] #to to samo, co postaci[:3]
+
+# [::2] pobiera od poczatku do konca co drugi element
+postaci[::2]
+
+# - jest od konca, czyli jakby byl 1 to byloby co kazdy, a skoro -1 to co kazdy ale od konca
+postaci[::-1]
+
+setka = tuple(range(1,101))
+pierwsze_10 = setka[0:10]
+ostatnie_10 = setka[-10:] # to samo co [-10::]
+
+nieparzyste = setka[::2] # to samo co [0::2]
+
+parzyste_wspak = setka[::-2]
+
+# przydatne funkcje, wszystkie wbudowane
+len(postaci)
+
+# min i max na stringu zwracaja litere z alfabetu najblizsza i najdalsza konca
+# by default, min() and max() can process values that are comparable. 
+# UWAGA uppercase letters come before lowercase letters in Python’s default character set, UTF-8.
+# jak mam mix liter i cyfr, cyfry ida przed literami
+
+max(postaci) # wbrew pozorom to dziala
+min(postaci)
+# duze Y w Yoda jest wczesniej niz male k z klon i dlatego tak posortowal
+# sum(postaci) daje typ error
+
+cyfry = (1,4,7,9,44,38)
+sum(cyfry)
+min(cyfry)
+max(cyfry)
+len(cyfry)
+
+sorted(cyfry)
+sorted(cyfry, reverse = True)
+print(cyfry)
+
+# cyfry.sort() nie zadziala, ponieaz tuple sa niemutowalne i nie maja atrybutu sort.
+# ale czemu w bledzie wyrzuca mi, ze 'tuple' object has no attribute 'sort'? przeciez sort to metoda
+
+oceny = (3,6,4,4,3,3,4,2,6)
+srednia = sum(oceny)/len(oceny)
+print(f"Najnizsza ocena na tym swiadectwie to {min(oceny)}.")
+print(f"Najwyzsza ocena na tym swiadectwie to {max(oceny)}.")
+print(f"Srednia ocen z tego swiadectwa to {srednia:.2f}.")
+
+# w tym 2f, f to float. Jesli dam d, to nie zadziala.
+if srednia >= 4.75:
+    print("To swiadectwo z paskiem.")
+else:
+    print("To nie jest swiadectwo z paskiem.")
+
