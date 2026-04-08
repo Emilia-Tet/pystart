@@ -1,0 +1,5 @@
+from random import choice
+
+osoby = [ "Mieszko", "Ola", "Agnieszka"]
+our_choice = choice(osoby)
+print(our_choice)
