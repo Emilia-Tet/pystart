@@ -1,0 +1,93 @@
+# zad. 1 : sekundy do godzin z minutami, np 23400 sekund do 6:30, wersja 24h.
+
+czas_w_sekundach = 34200
+czas_w_godzinach = czas_w_sekundach//3600
+reszta_w_minutach = int((czas_w_sekundach%3600)//60)
+print(f"Czas w nowym formacie to {czas_w_godzinach:02.0f}:{reszta_w_minutach}.")
+#02 oznacza dwie cyfry z przodu
+
+# zad. 2
+coord1x = int(input("Podaj wspolrzedna x pierwszego punktu: "))
+coord1y = int(input("Podaj wspolrzedna y pierwszego punktu: "))
+coord2x = int(input("Podaj wspolrzedna x drugiego punktu: "))
+coord2y = int(input("Podaj wspolrzedna y drugiego punktu: "))
+# 1. dlugosc odcinka
+print(f"Dlugosc Twojego odcinka wynosi: {((coord2x-coord1x)**2+ (coord2y-coord1y)**2)**0.5}")
+print(f"Wspolrzedne srodka Twojego odcinka wynosza: {(coord1x+coord2x)/2}, {(coord1y+coord2y)/2}")
+
+# zad. 3
+rok_biezacy = 2024
+rok_urodzenia = int(input("podaj rok urodzenia:"))
+
+if rok_urodzenia <= 2024-18:
+    print("Jestes pelnoletni.")
+else:
+    print(f"Nie jestes pelnoletni. Bedziesz pelnoletni za {18-rok_biezacy-rok_urodzenia} lat.")
+
+print(f"Twoj wiek to {rok_biezacy-rok_urodzenia} lat.")
+
+if rok_urodzenia %4 ==0 and rok_urodzenia%100 != 0 or rok_urodzenia % 400 == 0:
+    print("Urodziles sie w roku przestepnym.")
+else:
+    print("Urodziles sie w roku, ktory nie jest przestepny.")
+    
+
+5. pystart praca domowa 3
+import math
+
+# 1 palindrom
+liczba = "525"
+liczba_rev = liczba[::-1]
+if liczba == liczba_rev:
+    print(f"{liczba} to liczba palindromiczna.")
+else:
+    print(f"{liczba} to nie jest liczba palindromiczna.")
+
+bok = float(input("Podaj dlugosc boku trojkata: "))
+wysokosc = bok* math.sqrt(3)/2
+pole = bok*wysokosc/2
+print(f"Pole trojkata o boku {bok} cm wynosi {pole:.2f}cm2, a obwod wynosi {3*bok} cm.")
+
+# 2 dni tygodnia
+lista_dni = ["poniedzialek", "wtorek", "sroda", "czwartek", "piatek", "sobota", "niedziela"]
+while True:
+    dzien = int(input("podaj numer dnia tygodnia:"))
+    try:
+        print(f"Dzien tygodnia o podanym numerze to: {lista_dni[dzien-1]}")
+        break
+    except:
+        print("To nie byl prawdziwy numer dnia tygodnia. Sprobuj jeszcze raz")
+# match case:
+match dzien:
+    case 1: print("poniedzialek")
+# etc.
+
+
+
+# liczby
+liczba1 = "krowa"
+liczba2 = 0
+liczba3 = 8
+lista = []
+try:
+    if liczba1 == liczba2 and liczba2 ==liczba3:
+        print("Wszystkie liczby sa identyczne.")
+    else:
+        lista.append(liczba1)
+        lista.append(liczba2)
+        lista.append(liczba3)
+        lista.sort()
+
+        if lista[0] == lista[1]:
+            print(f"Dwie z podanych liczb sa identyczne, {lista[2]} jest wieksze niz {lista[0]}.")
+
+        elif lista[1] == lista[2]:
+            print(f"Dwie z podanych liczb sa identyczne, {lista[1]} jest wieksze niz {lista[0]}.")
+        
+        else:
+            print(f"{lista[2]} jest najwieksza liczba, {lista[1]} jest srodkowa, a {lista[0]} jest najmniejsza liczba z podanych.")
+except:
+    print("Podaj liczby calkowite.")
+
+
+    
