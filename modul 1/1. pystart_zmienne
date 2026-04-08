@@ -1,0 +1,35 @@
+# uwaga, bo samochod spala 6l/100 km, a przejechal 150 km
+def cena_za_trase(dlugosc_trasy, cena_za_litr, spalanie):
+    cena_koncowa = dlugosc_trasy*spalanie*cena_za_litr/100
+    info = print(f"Cena za te trase wynosi {cena_koncowa} zl. ")
+    return(info)
+spalanie = 6
+litr = 6
+dlugosc = 150
+cena_za_trase(dlugosc, litr, spalanie)
+
+# print(f"Cena za te trase wynosi {cena_za_trase(dlugosc, litr)} zl. ")
+
+pi1 = 3.14
+pi2 = 3,14
+
+type(pi1)
+type(pi2)
+# pi2 daje tuple! bo dane sa po przecinku. Nawiasy okragle sa opcjonalne. 
+# Podmiana na tuple powodue, ze dostaje druga tuple z dwiema cyframi.
+
+def pole_kola(promien):
+    pole = promien**2 *3.14
+    return(pole)
+
+pole_kola(8)
+
+def obwod_kola(promien):
+    obwod = 2*promien*3.14
+    return(obwod)
+
+obwod_kola(8)
+
+from math import pi
+pi
+
