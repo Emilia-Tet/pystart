@@ -1,0 +1,171 @@
+# 1. stworz tuple podzielne przez 6 z zakresu od 12 do 1024 za pomoca range i odpowiedz na pytania
+my_tuple = tuple(range(12,1024, 6))
+# ile jest tych liczb?
+len(my_tuple)
+# wyswietl 3 pierwsze liczby
+my_tuple[0:3]
+my_tuple[:3]
+# przedostatni element
+my_tuple[-2]
+# co szosty element liczac od czwartego
+my_tuple[3::6]
+# co trzeci liczac od konca
+my_tuple[::-3]
+# srednia ostatnich 10 wartosci (sum a potem podzielic przez 10)
+last_ten = my_tuple[-10:]
+average = sum(last_ten)/10
+
+# 2. program odbiera od uzytkownika inta i wyswietla liczby parzyste od 2 do tej liczby, oddzielone przecinkami
+# inna wersja zadania
+user_number = input("Podaj liczbe calkowita: ")
+try:
+    for i in range(2, int(user_number)+1):
+        print(f'{i}, ', end = '')
+    print()
+except:
+    "To nie byla liczba calkowita."
+
+# wersja zgodna z poleceniem:
+try:
+    user_number = int(input("Podaj liczbe calkowita: "))
+    user_range = range(2, user_number+1, 2)
+    for n in user_range:
+        print(f'{n}, ', end = '')
+except:
+    print("To nie byla liczba calkowita.")
+
+# suma, liczba, srednia i iloczyn tych liczb
+sum(user_range)
+len(user_range)
+average = sum(user_range)/len(user_range)
+iloczyn = 1
+for i in user_range:
+    iloczyn *=i
+print(iloczyn)
+
+# liczba odebrana od uzytkownika podniesiona do potegi 2, 3, 4, 5 - petla for
+
+liczba_uzytk = int(input("Podaj liczbe calkowita: "))
+potega = int(input("Podaj do ktorej potegi podniesc liczbe: "))
+wynik = 1
+lista = []
+for i in range(1,potega+1):
+    lista.append(liczba_uzytk)
+for j in lista:
+    wynik *= j
+print(wynik)
+
+# odp w tym zadaniu chodzilo o troszke cos innego - zeby wyswietlic 4 zdania dla wpisanej cyfry.
+# wtedy mozna to zrobic prosciej:
+number1 = int(input("Give a number: "))
+for x in range(2,6):
+    print(f"Liczba {number1} do potegi {x} wynosi {number1**x}.")
+# funkcja przechodzi po znakach z stringa i wyswietla osobno kazdy znak i odpowiednik z tablicy ascii za pomoca funkcji ord()
+test_string = 'hello'
+for t in test_string:
+    print(t, ord(t))
+# poza ord() istnieje jeszcze analogiczny chr():
+chr(88)
+
+# zapytaj o liczbe i sprawdz, czy jest liczba pierwsza (dzielniki od 2 do tej liczby)
+test_liczba = 13
+lista_reszt = []
+
+for g in range(2,test_liczba):
+    while g*g <= test_liczba:
+        reszta = test_liczba%g
+        lista_reszt.append(reszta)
+        if reszta == 0:
+            print("Ta liczba nie jest pierwsza.")
+            break
+if 0 not in lista_reszt:
+    print("Ta liczba jest pierwsza.")
+
+# jesli liczb an nie dzieli sie przez zadna liczbe pierwsza mniejsza lub rowna jej pierwiastkowi2, 
+# to juz nie bedzie sie dzielila przez zadne inne liczby niz 1 i ona sama (bo w zasadzie napotka juz tylko wielokrotnosci)
+# wiec wystarczy sprawdzac do tego pierwiastka
+    
+
+# 4. tupla imie, nazwisko i wiek. wyswietl w formacie
+dane_osoby = 'John', 'Smith', '54'
+imie, nazwisko, wiek = dane_osoby
+print(f"imie: {imie}")
+print(f"nazwisko: {nazwisko}")
+print(f"wiek: {wiek}")
+# imie: John itd
+#albo:
+print(f"imie: {dane_osoby[0]}")
+print(f"nazwisko: {dane_osoby[1]}")
+print(f"wiek: {dane_osoby[2]}")
+
+print("---"*30)
+# zadeklaruj tuple w postaci a=((1,2,3), (4,5,6), (7,8,9)) a nastepnie przejdz petla for 
+# 1+2+3 = 6 itd
+kolejna_tupla = (range(1,4), range(4,7), range(7,10))
+tupla1, tupla2, tupla3 = kolejna_tupla
+a=((1,2,3), (4,5,6), (7,8,9))
+
+for x in a:
+    sum(x)
+# Kacper zrobil to tak, zeby bylo widac skladniki dodawania:
+for calculation in a:
+    print(f"{calculation[0]} + {calculation[1]} + {calculation[2]} = {sum(calculation)}")
+
+#  5. pobiera string i wyswietla w odrotnej kolejnosci, reverse albo ::-1
+nowy_string = input("Podaj dowolne slowo: ")
+print(f"Twoje slowo od tylu brzmi: '{nowy_string[::-1]}'")
+
+# ciag znakow zwraca bez .,: i bez spacji
+strstr = "dlaczego znowu pada?"
+nowy_strstr = strstr.replace(" ", "").replace("?", "").replace(".", "")
+# zamiast wypisywc znaki do wymiany, mozna by iterowac po znakach i zachowywac tylko 
+# isnumeric oraz isalpha, a potem przypisac je do nowej zmiennej
+
+# odbierz zdanie i zwroc na zmiane malymi i wielkimi literami, kazde kolejne slowo inaczej, sprawdzic czy przechodzimy po petli parzyscie czy nieparzyscie
+zdanie = "Zawsze najtrudniej wymyslic jakies randomowe zdanie."
+lista_slow = zdanie.split()
+counter = 0
+for slowo in lista_slow:
+    counter = counter +1
+    if counter%2 == 0:
+        print(slowo.lower(), end = " ")
+    else:
+        print(slowo.upper(), end = " ")
+
+# np dodac counter
+# mozna tez zrobic:
+for counter, word in enumerate(zdanie.split(' ')):
+    if counter%2 == 0:
+        print(slowo.lower(), end = " ")
+    else:
+        print(slowo.upper(), end = " ")
+# w obu przypadkach problem jest taki, ze oba warunki sa bardzo podobne, mozna uproscic:
+# WAZNE kiedy da sie zastapic ELSE przez nadpisanie zmiennej, lepiej tak zrobic. 
+sentence = 'Litwo ojczyzno moja, ty jestes jak zdrowie.'
+new_sentence = ''
+
+for counter, word in enumerate(sentence.split(' ')):
+    new_word = word.upper()
+    if counter % 2 == 0:
+        new_word = word.lower()    
+    new_sentence = f'{new_sentence} {new_word}'
+print(new_sentence) 
+# wypisz malymi literami tylko te slowa z podanego zdania, ktore zaczynaja sie i koncza na te sama litere
+
+for word in sentence.split(' '):
+    if word.lower()[0] == word.lower()[-1]:
+        word.lower()
+
+#albo
+if word.lower().startswith(word[-1].lower()):
+    print("word")
+
+# wyswietl wszystkie slowa z usunietymi samogloskami
+vowels = 'a', 'e', 'i', 'o', 'u', 'y'
+# w sumie mozna prosciej
+vowels = 'aeiouy'
+newnew_sentence = ''
+for char in sentence:
+    if char.lower() not in vowels:
+        newnew_sentence += char
+print(newnew_sentence)
