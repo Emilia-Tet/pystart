@@ -1,0 +1,26 @@
+# venv to modul wbudowany, nie trzeba go pobierac przez pip
+# srodowisko mozna stworzyc przez python3 -m venc myenv
+# VSC moze wymagac nowego pluginu
+# w Pycharmie trzeba dopilnowac, zeby location mialo na koncu \msvenv
+# w pycharmie tez mozna dopilnowac, zeby interpreter byl zgodny z najnowsza wersja
+# pycharm --> settings --> wyszukiwarka "wheel". Change font size with control... mouse wheel. 
+# pozwala zmieniac rozmiar czcionki przez ctrl + kolko w myszy
+# pycharm: ctrl +d (duplicate) kopiuje poprzednia linie
+
+# int * float daje float
+
+wzrost = float(input('''Podaj swoj wzrost w metrach: \n'''))
+waga = float(input('''Podaj swoja wage w kilogramach: \n'''))
+bmi = waga/wzrost**2
+print(f"Twoje BMI wynosi{bmi: .2f}")
+
+netto = float(input('''Podaj cene netto: \n'''))
+brutto = netto*1.23
+print(f"Brutto od podanej kwoty wynosi{brutto: .2f} przy podatku VAT 23%.")
+
+podstawa1 = float(input('''podstawa w cm:\n'''))
+podstawa2 = float(input('''podstawa2 w cm:\n'''))
+wysokosc = float(input('''wysokosc w cm:\n'''))
+
+trapez = (podstawa1 + podstawa2)*wysokosc/2
+print(f"Pole twojego trapezu wynosi{trapez: .2f} cm2.")
