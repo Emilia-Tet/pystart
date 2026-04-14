@@ -1,7 +1,4 @@
-#README
-This repository contains all exercices from PYSTART course.
-``clone``
+# Pystart
 
-```python
-print('Hello world')
-```
+Python course exercises and practice scripts. 
+My starting point before moving into data engineering and automation.
